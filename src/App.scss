@@ -1,0 +1,76 @@
+.App{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .content {
+        flex: 1;
+        overflow: scroll;
+        margin-bottom: 3rem;
+    }
+    .footer {
+        width: 100%;
+        height: 3rem;
+        position: fixed;
+        bottom: 0;
+        box-shadow: 0 0 10px rgba(0,0,0,.06);
+        background: linear-gradient(to right, lightblue 0%,#fffff0 100%);
+        ul{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            a{
+                flex: 1;
+                li{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    b, span{
+                        flex: 1;
+                    }
+                    span{
+                        font-size: 14px;
+                    }
+                    b{
+                        width: 16px;
+                        height: 16px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .tar{
+                li{
+                    span{
+                        color: #000;
+                    }
+                    .b1{
+                        background: url('./img/icon/home.png') no-repeat;
+                    }
+                    .b2{
+                        background: url('./img/icon/cart.png') no-repeat;
+                    }
+                    .b3{
+                        background: url('./img/icon/mine.png') no-repeat;
+                    }
+                }
+            }
+            .active{
+                li{
+                    span{
+                        color: #ff4891;
+                    }
+                    .b1{
+                        background: url('./img/icon/home2.png') no-repeat;
+                    }
+                    .b2{
+                        background: url('./img/icon/cart2.png') no-repeat;
+                    }
+                    .b3{
+                        background: url('./img/icon/mine2.png') no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
