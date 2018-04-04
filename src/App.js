@@ -6,6 +6,8 @@ import Cart from './pages/Cart'
 import Mine from './pages/Mine'
 import Deatail from './pages/Detail'
 import Error from './pages/Error'
+import Search from './components/Search';
+// import Address from './components/Address';
 
 class App extends Component {
   render() {
@@ -18,6 +20,8 @@ class App extends Component {
                 <Route path="/home" component={Home}></Route>
                 <Route path="/cart" component={Cart}></Route>
                 <Route path="/mine" component={Mine}></Route> 
+                <Route path="/search" component={Search}></Route>
+                {/* <Route path="/address" component={Address}></Route>                 */}
                 <Route path="/detail/:id" component={Deatail}></Route>  {/* 详情页*/}
                 <Route path="/*" component={Error}></Route>   {/* 404页面 */}          
               </Switch>

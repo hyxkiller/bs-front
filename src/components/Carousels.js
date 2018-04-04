@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
+import axios from 'axios'
 import '../styles/Carousel.scss'
 
 class Carousels extends Component {
     state = {
-        data: ['1', '2', '3'],
+        data: [],
         imgHeight: 176,
         slideIndex: 0,
     }
     componentDidMount() {
-        // simulate img loading
-        setTimeout(() => {
-            this.setState({
-            data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-            });
-        }, 100);
+            axios.get('/port/carousel.json')
+                 .then((res) => {
+                     this.setState({
+                         data: res.data 
+                     })
+                 })
     }   
     render() {
         return (
@@ -30,17 +31,16 @@ class Carousels extends Component {
                     {this.state.data.map(val => (
                         <a
                         key={val}
-                        href="http://www.alipay.com"
                         style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                         >
                         <img
-                            src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                            src={val}
                             alt=""
-                            style={{ width: '100%', verticalAlign: 'top' }}
+                            style={{ display: 'block', width: '100%', height: '100%'}}
                             onLoad={() => {
                             // fire window resize event to change height
                             window.dispatchEvent(new Event('resize'));
-                            this.setState({ imgHeight: 'auto' });
+                            // this.setState({ imgHeight: 'auto' });
                             }}
                         />
                         </a>

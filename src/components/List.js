@@ -29,7 +29,7 @@ const data = [
   }  
 
 class List extends Component {
-    constructor(props) {
+      constructor(props) {
         super(props);
         const dataSource = new ListView.DataSource({
           rowHasChanged: (row1, row2) => row1 !== row2,
@@ -63,7 +63,13 @@ class List extends Component {
           });
         }, 1500);
       }
-    
+      
+      // 添加购物车
+      tocart = () => {
+        console.log(11)
+      }
+
+
       onRefresh = () => {
         this.setState({ refreshing: true, isLoading: true });
         // simulate initial Ajax
@@ -125,7 +131,9 @@ class List extends Component {
                   <img style={{ height: '63px', width: '63px', marginRight: '15px' }} src={obj.img} alt="" />
                   <div style={{ display: 'inline-block' }}>
                     <div style={{ marginBottom: '8px', color: '#000', fontSize: '16px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '250px' }}>{obj.des}-{rowData}</div>
-                    <div style={{ fontSize: '16px' }}><span style={{ fontSize: '30px', color: '#FF6E27' }}>{rowID}</span> 元/任务</div>
+                    <div style={{ fontSize: '16px' }}>￥<span style={{ fontSize: '30px', color: '#FF6E27' }}>{rowID}</span>
+                      <div onClick={this.tocart} style={{ display: 'inline-block', float: 'right', width: '50px', height: '50px' }} ><img style={{width: '100%', height: '100%'}} src="https://j-image.missfresh.cn/img_20170425134548759.png" alt=""/> </div>
+                    </div>
                   </div>
                 </div>
               </div>

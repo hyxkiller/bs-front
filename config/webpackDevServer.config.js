@@ -81,12 +81,16 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy: {
-      '/api': {
+      '/port': {
         target: 'http://localhost:9002',
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/port': ''
         }
+      },
+      '/api': {
+        target: 'http://localhost:5000/',
+        changeOrigin: true
       }
     },
     before(app) {
