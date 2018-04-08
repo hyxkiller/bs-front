@@ -47,7 +47,7 @@ class Register extends Component {
 
     }
 
-    toRegister = () => {
+    toLogin = () => {
         this.props.history.push('/mine/login');
     }
 
@@ -63,7 +63,7 @@ class Register extends Component {
                         注册
                     </button>
                     <p style={{textAlign: 'center'}}>{this.state.msg}</p>
-                    <p onTouchStart={this.toLogin} className="login-p">去注册</p>                    
+                    <p onTouchStart={this.toLogin} className="reg-p">去登录</p>                    
                 </div>
             </Mine_com>
         );
