@@ -1,0 +1,36 @@
+.cart{
+    width: 100%;
+    height: 100%;
+    .cart-nothing{
+        margin: 5rem auto;
+        width: 60%;
+        height: 30%;
+        background: url('../img/cart-0.png') no-repeat center center;
+        position: relative;
+        .cart-p{
+            position: absolute;
+            bottom: -2rem;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .cart-msg{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .cart-head{
+            padding-top: 0.2rem;
+            width: 100%;
+            height: 2.5rem;
+            font-size: 0.8rem;
+            line-height: 2.5rem;
+            box-shadow: 0 0 5px rgba(0,0,0,.6);
+            text-align: center;
+        }
+        .cart-content{
+            flex: 1;
+        }
+    }
+}

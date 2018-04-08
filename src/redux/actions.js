@@ -1,14 +1,14 @@
-export const show = (dispatch, data) => {
+export const login = (dispatch, data) => {
     const action = {
-        type: 'show',
+        type: 'login',
         payload: data
     }
     dispatch(action)
 }
 
-export const login = (dispatch, data) => {
+export const goods = (dispatch, data) => {
     const action = {
-        type: 'login',
+        type: 'goods',
         payload: data
     }
     dispatch(action)

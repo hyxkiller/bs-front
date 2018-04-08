@@ -1,13 +1,6 @@
 import {combineReducers} from 'redux'
 
-function show( state = false, action ){
-    switch(action.type){
-        case 'show': return action.payload;
-        default: return state
-    }
-}
-
-function login( state = 'Login', action){
+function login( state = '', action) {
     switch(action.type){
         case 'login':
         // 将登录状态存在localstorage里
@@ -16,10 +9,23 @@ function login( state = 'Login', action){
         default: return state
     }
 }
+var goodsList = []
+function goods( state = [], action) {
+    switch(action.type){
+        case 'goods': 
+            if(goodsList.id !== action.payload.id){
+                goodsList.push(action.payload)
+            }
+            var cartMsg = Array.from(new Set(goodsList))
+            localStorage.setItem('goods', cartMsg)
+            return cartMsg;
+        default: return state
+    }
+}
 
 const Status = combineReducers({
-    show,
-    login
+    login,
+    goods
 })
 
 export default Status

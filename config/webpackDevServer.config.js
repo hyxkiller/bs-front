@@ -89,8 +89,11 @@ module.exports = function(proxy, allowedHost) {
         }
       },
       '/api': {
-        target: 'http://localhost:5000/',
-        changeOrigin: true
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     },
     before(app) {
