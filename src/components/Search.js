@@ -86,7 +86,8 @@ class Search extends Component {
                                         <div style={{ flex: '1' }}>
                                             <div style={{ marginBottom: '8px', color: '#000', fontSize: '16px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '250px' }}>{item.des}</div>
                                             <div style={{ fontSize: '16px' }}>￥<span style={{ fontSize: '30px', color: '#FF6E27' }}>{item.money}</span>
-                                            <div onTouchStart={() => {
+                                            <div onTouchStart={(e) => {
+                                                e.stopPropagation()
                                                 this.props.goods(item)    // 添加购物车
                                             }} style={{ display: 'inline-block', float: 'right', width: '50px', height: '50px' }} ><img style={{width: '100%', height: '100%'}} src="https://j-image.missfresh.cn/img_20170425134548759.png" alt=""/> </div>
                                             </div>

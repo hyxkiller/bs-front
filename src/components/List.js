@@ -163,9 +163,9 @@ class List extends Component {
                 <div style={{ height: '50px',padding:'0 15px', lineHeight: '50px', color: '#888', fontSize: '18px', borderBottom: '1px solid #ddd' }}>
                   {obj.title}
                 </div>
-                <div onClickCapture={() => {
+                <div onTouchStart={() => {
                   this.props.history.push(`/detail/${obj.id}`)       // 跳转详情页                    
-                }} style={{ display: 'flex', padding: '15px', cursor: 'pointer' }}>
+                }} style={{ display: 'flex', padding: '15px'}}>
                   <img style={{ height: '63px', width: '63px', marginRight: '15px' }} src={obj.img} alt="" />
                   <div style={{ flex: '1' }}>
                     <div style={{ marginBottom: '8px', color: '#000', fontSize: '16px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '250px' }}>{obj.des}</div>
